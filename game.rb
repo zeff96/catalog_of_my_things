@@ -1,7 +1,11 @@
 class Game
-  def initialize(multiplayer, last_palyed_at)
+  attr_reader :publish_date
+  attr_accessor :multiplayer, :last_played_at
+
+  def initialize(multiplayer, last_played_at)
+    super(publish_date)
     @multiplayer = multiplayer
-    @last_palyed_at = last_palyed_at
+    @last_palyed_at = last_played_at
   end
 
   def can_be_archived?
