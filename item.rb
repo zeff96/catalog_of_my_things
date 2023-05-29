@@ -1,15 +1,10 @@
 class Item
   attr_reader :id, :genre, :author, :source, :label
   attr_accessor :publish_date
-  
+
   def initialize(publish_date)
-    id = generate_id
-    genre = nil
-    author = nil
-    source = nil
-    label = nil
+    generate_id
     @publish_date = publish_date
-    archived = false
   end
 
   def genre=(genre)
