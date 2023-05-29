@@ -5,4 +5,10 @@ class Author
     @last_name = last_name
     items = []
   end
+
+  private
+
+  def generate_id
+    Random.rand(1..1000)
+  end
 end
