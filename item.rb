@@ -32,6 +32,10 @@ class
     label.add_items(self) unless label.add_items.include?(self)
   end
 
+  def move_to_archive
+    @archived = can_be_archived?
+  end
+
   private
 
   def generate_id
