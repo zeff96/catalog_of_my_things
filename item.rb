@@ -5,6 +5,7 @@ class Item
   def initialize(publish_date)
     generate_id
     @publish_date = publish_date
+    @archived = false
   end
 
   def genre=(genre)
@@ -40,7 +41,7 @@ class Item
   def can_be_archived?
     current_time = Time.now.year
     published_at = publish_date.year
-    archived = current_time - published_at
-    archived > 10
+    year_difference = current_time - published_at
+    year_difference > 10
   end
 end
