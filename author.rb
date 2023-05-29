@@ -6,6 +6,11 @@ class Author
     items = []
   end
 
+  def add_items(item)
+    @items << item
+    @items.author= self
+  end
+
   private
 
   def generate_id
