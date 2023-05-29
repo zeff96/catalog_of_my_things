@@ -1,5 +1,5 @@
 class 
-  attr_reader :id
+  attr_reader :id, :genre, :author, :source, :label
   attr_accessor :publish_date
   
   def initialize(publish_date)
@@ -10,6 +10,11 @@ class
     label = nil
     @publish_date = publish_date
     archived = false
+  end
+
+  def genre=(genre)
+    @genre = genre
+    genre.add_items(self) unless genre.add_items.include?(self)
   end
 
   private
