@@ -17,6 +17,11 @@ class
     genre.add_items(self) unless genre.add_items.include?(self)
   end
 
+  def author=(author)
+    @author = author
+    author.add_items(self) unless author.add_items.include?(self)
+  end
+
   private
 
   def generate_id
