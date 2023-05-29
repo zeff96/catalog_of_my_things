@@ -27,6 +27,11 @@ class
     source.add_items(self) unless source.add_items.include?(self)
   end
 
+  def label=(label)
+    @label = label
+    label.add_items(self) unless label.add_items.include?(self)
+  end
+
   private
 
   def generate_id
