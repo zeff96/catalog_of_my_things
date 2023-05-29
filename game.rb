@@ -1,4 +1,6 @@
-class Game
+require_relative 'item'
+
+class Game < Item
   attr_reader :publish_date
   attr_accessor :multiplayer, :last_played_at
 
