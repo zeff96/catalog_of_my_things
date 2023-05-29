@@ -6,12 +6,11 @@ class Author
     @id = generate_id
     @first_name = first_name
     @last_name = last_name
-    items = []
   end
 
   def add_items(item)
     @items << item
-    item.author= self
+    item.author = self
   end
 
   private
