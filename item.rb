@@ -22,6 +22,11 @@ class
     author.add_items(self) unless author.add_items.include?(self)
   end
 
+  def source=(source)
+    @source = source
+    source.add_items(self) unless source.add_items.include?(self)
+  end
+
   private
 
   def generate_id
