@@ -37,4 +37,11 @@ class
   def generate_id
     Random.rand(1..1000)
   end
+
+  def can_be_archived?
+    current_time = Time.now.year
+    published_at = publish_date.year
+    archived = current_time - published_at
+    archived > 10
+  end
 end
