@@ -1,7 +1,7 @@
 class Author
   attr_reader :items
   attr_accessor :first_name, :last_name
-  
+
   def initialize(first_name, last_name)
     @id = generate_id
     @first_name = first_name
@@ -11,7 +11,7 @@ class Author
 
   def add_items(item)
     @items << item
-    @items.author= self
+    item.author= self
   end
 
   private
