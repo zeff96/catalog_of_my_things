@@ -27,7 +27,7 @@ CREATE TABLE Game(
   CONSTRAINT fk_label_id FOREIGN KEY(label_id) REFERENCES Label(id)
 );
 
-CREATE TABLE music_albums (
+CREATE TABLE MusicAlbum (
   id SERIAL PRIMARY KEY,
   publish_date DATE,
   genre_id INT,
