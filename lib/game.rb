@@ -5,7 +5,7 @@ class Game < Item
   attr_reader :publish_date
   attr_accessor :multiplayer, :last_played_at, :name
 
-  def initialize(multiplayer, name, last_played_at)
+  def initialize(name, multiplayer, last_played_at)
     super(publish_date)
     @multiplayer = multiplayer
     @name = name
@@ -15,10 +15,10 @@ class Game < Item
   private
 
   def can_be_archived?
-    super && last_two_years
+    super && last_two_years?
   end
 
-  def last_two_years
+  def last_two_years?
     date_difference = Date.iso8601(@last_played_at).next_year(2)
     Date.today > date_difference
   end
