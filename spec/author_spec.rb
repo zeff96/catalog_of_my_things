@@ -11,7 +11,7 @@ describe Author do
     end
 
     it 'should correct first_name' do
-      
+      expect(author.first_name).to eq 'zeff'
     end
   end
 end
