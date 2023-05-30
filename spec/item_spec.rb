@@ -9,5 +9,9 @@ describe Item do
     it 'should be an instance of Item' do
       expect(@item).to be_an_instance_of Item
     end
+
+    it 'should move_to_archive to eq "true"' do
+      expect(@item.move_to_archive).to be_truthy
+    end
   end
 end
