@@ -1,14 +1,12 @@
 require_relative '../lib/author'
 require_relative '../lib/game'
 
-
 describe Author do
   before(:each) do
     @author = Author.new('zeff', 'adeka')
   end
 
   context 'Author class test' do
-
     it 'should be an instance of author class' do
       expect(@author).to be_an_instance_of(Author)
     end
@@ -24,7 +22,7 @@ describe Author do
     it 'should have empty list items' do
       expect(@author.items).to eq []
     end
-    
+
     it 'should have an item after calling add_items' do
       item = Game.new('Yes', '2022-10-15')
       @author.add_items(item)

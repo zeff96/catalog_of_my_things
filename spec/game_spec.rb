@@ -17,12 +17,12 @@ describe Game do
 
     it 'should have can_be_archived eq "false"' do
       @game.publish_date = '2020-10-15'
-      expect(@game.instance_eval('can_be_archived?')).to be_falsey
+      expect(@game.instance_eval('can_be_archived?', __FILE__, __LINE__)).to be_falsey
     end
 
     it 'should have can_be_archived eq "false"' do
       @game.publish_date = '2010-10-15'
-      expect(@game.instance_eval('can_be_archived?')).to be_truthy
+      expect(@game.instance_eval('can_be_archived?', __FILE__, __LINE__)).to be_truthy
     end
   end
 end

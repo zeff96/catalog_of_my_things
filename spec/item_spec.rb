@@ -15,7 +15,7 @@ describe Item do
     end
 
     it 'should return true if publish date is older than 10yrs' do
-      expect(@item.instance_eval('can_be_archived?')).to be_truthy
+      expect(@item.instance_eval('can_be_archived?', __FILE__, __LINE__)).to be_truthy
     end
   end
 end
