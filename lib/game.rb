@@ -1,15 +1,20 @@
 require_relative 'item'
+require_relative '../modules/modules'
+require_relative 'author'
+require_relative 'label'
 require 'date'
 
 class Game < Item
-  attr_reader :publish_date
-  attr_accessor :multiplayer, :last_played_at, :name
+  include ModuleName
 
-  def initialize(name, multiplayer, last_played_at)
+  attr_reader :publish_date, :author, :label
+  attr_accessor :multiplayer, :last_played_at
+
+  def initialize(multiplayer, last_played_at, author, label)
     super(publish_date)
     @multiplayer = multiplayer
-    @name = name
     @last_played_at = last_played_at
+    initialize_relationship(author, label)
   end
 
   private

@@ -9,8 +9,8 @@ class Label
     @items = []
   end
 
-  def add_item(item)
-    @items << item unless @items.include?(item)
+  def add_items(item)
+    @items << item
     item.label = self
   end
 end
