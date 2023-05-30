@@ -27,3 +27,14 @@ CREATE TABLE Game(
   CONSTRAINT fk_label_id FOREIGN KEY(label_id) REFERENCES Label(id)
 );
 
+CREATE TABLE music_albums (
+  id SERIAL PRIMARY KEY,
+  publish_date DATE,
+  genre_id INT,
+  author_id INT,
+  label_id INT,
+  on_spotify BOOLEAN,
+  FOREIGN KEY (genre_id) REFERENCES genres(id),
+  FOREIGN KEY (author_id) REFERENCES authors(id),
+  FOREIGN KEY (label_id) REFERENCES labels(id)
+);
