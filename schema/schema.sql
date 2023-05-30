@@ -6,6 +6,11 @@ CREATE TABLE Author(
   last_name  VARCHAR(255)
 );
 
+CREATE TABLE genres (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) 
+);
+
 CREATE TABLE Game(
   id INT GENERATED ALWAYS AS IDENTITY,
   genre_id INT,
@@ -21,3 +26,4 @@ CREATE TABLE Game(
   CONSTRAINT fk_source_id FOREIGN KEY(source_id) REFERENCES Source(id)
   CONSTRAINT fk_label_id FOREIGN KEY(label_id) REFERENCES Label(id)
 );
+
