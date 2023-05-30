@@ -17,5 +17,12 @@ describe Author do
     it 'should correct last_name' do
       expect(author.last_name).to eq 'adeka'
     end
+
+    item = Game.new('Yes', '2022-10-15')
+    author.add_items(item)
+
+    it 'should have an item after calling add_items' do
+      expect(author.items.length).to eq 1
+    end
   end
 end

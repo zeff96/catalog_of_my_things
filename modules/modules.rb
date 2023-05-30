@@ -1,10 +1,5 @@
-module ModuleName
-  attr_reader :author, :label
-  def initialize_relationship(author, genre, label)
-    self.author = author
-    self.genre = genre
-    self.label = label
-  end
+module Associations
+  attr_reader :author, :genre, :label
 
   def author=(author)
     @author = author

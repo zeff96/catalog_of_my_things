@@ -5,16 +5,15 @@ require_relative 'label'
 require 'date'
 
 class Game < Item
-  include ModuleName
+  include Associations
 
-  attr_reader :publish_date, :author, :label
+  attr_reader :publish_date
   attr_accessor :multiplayer, :last_played_at
 
-  def initialize(multiplayer, last_played_at, author, label)
+  def initialize(multiplayer, last_played_at)
     super(publish_date)
     @multiplayer = multiplayer
     @last_played_at = last_played_at
-    initialize_relationship(author, label)
   end
 
   private
