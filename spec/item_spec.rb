@@ -13,5 +13,9 @@ describe Item do
     it 'should move_to_archive to eq "true"' do
       expect(@item.move_to_archive).to be_truthy
     end
+
+    it 'should return true if publish date is older than 10yrs' do
+      expect(@item.instance_eval('can_be_archived?')).to be_truthy
+    end
   end
 end
