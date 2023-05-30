@@ -37,7 +37,7 @@ class Item
   private
 
   def generate_id
-    Random.rand(1..1000)
+    @id = Random.rand(1..1000)
   end
 
   def can_be_archived?

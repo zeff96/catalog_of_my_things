@@ -1,4 +1,5 @@
 require_relative 'item'
+require 'date'
 
 class Game < Item
   attr_reader :publish_date
@@ -11,16 +12,14 @@ class Game < Item
     @last_played_at = last_played_at
   end
 
-  def can_be_archived?
-    super && played_last_at?
-  end
-
   private
 
-  def played_last_at?
-    current_year = Time.now.year
-    last_played_year = @last_palyed_at.year
-    archived = current_year - last_played_year
-    archived > 2
+  def can_be_archived?
+    super && last_two_years
+  end
+
+  def last_two_years
+    date_difference = Date.iso8601(@last_played_at).next_year(2)
+    Date.today > date_difference
   end
 end
