@@ -13,5 +13,9 @@ describe Author do
     it 'should correct first_name' do
       expect(author.first_name).to eq 'zeff'
     end
+
+    it 'should correct last_name' do
+      expect(author.last_name).to eq 'adeka'
+    end
   end
 end
