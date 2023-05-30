@@ -34,7 +34,7 @@ CREATE TABLE MusicAlbum (
   author_id INT,
   label_id INT,
   on_spotify BOOLEAN,
-  FOREIGN KEY (genre_id) REFERENCES genres(id),
-  FOREIGN KEY (author_id) REFERENCES authors(id),
-  FOREIGN KEY (label_id) REFERENCES labels(id)
+  FOREIGN KEY (genre_id) REFERENCES Genre(id),
+  FOREIGN KEY (author_id) REFERENCES Author(id),
+  FOREIGN KEY (label_id) REFERENCES Label(id)
 );
