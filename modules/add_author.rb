@@ -7,7 +7,7 @@ module CreateAuthor
 
     author = Author.new(first_name, last_name)
     @authors << author unless author.nil?
-    puts 'Author added successfully!'
+    author
   end
 
   private
