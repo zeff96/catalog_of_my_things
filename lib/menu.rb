@@ -1,9 +1,8 @@
 OPTIONS = {
-  1 => {label: 'List all authors', action: :list_all_authors},
-  2 => {label: 'Add author', action: :add_author},
-  3 => {label: 'Exit', action: :exit_program}
+  1 => { label: 'List all authors', action: :list_all_authors },
+  2 => { label: 'Add author', action: :add_author },
+  3 => { label: 'Exit', action: :exit_program }
 }.freeze
-
 
 class Menu
   def initialize(app)
@@ -12,7 +11,7 @@ class Menu
 
   def display
     puts "\nChoose an option by entering a number:"
-    OPTIONS.each {|key, value| puts "#{key} - #{value[:label]}"}
+    OPTIONS.each { |key, value| puts "#{key} - #{value[:label]}" }
   end
 
   def handle_selection(selection)
@@ -20,7 +19,7 @@ class Menu
     if handlers
       @app.send(handlers[:action])
     else
-      puts "Invalid option"
+      puts 'Invalid option'
     end
   end
 

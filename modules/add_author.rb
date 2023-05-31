@@ -10,7 +10,7 @@ module AuthorManager
   end
 
   def list_all_authors
-    puts "List of all authors"
+    puts 'List of all authors'
     print "No author found\n" if @authors.empty?
 
     @authors.each_with_index do |author, idx|

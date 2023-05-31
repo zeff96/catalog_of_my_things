@@ -1,3 +1,5 @@
+require_relative '../modules/add_author'
+
 class App
   def initialize
     @authors = []
