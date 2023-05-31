@@ -3,7 +3,9 @@ require_relative '../lib/game'
 
 describe Author do
   before(:each) do
-    @author = Author.new('zeff', 'adeka')
+    @first_name = 'zeff'
+    @last_name = 'adeka'
+    @author = Author.new(@first_name, @last_name)
   end
 
   context 'Author class test' do
@@ -28,6 +30,15 @@ describe Author do
       @author.add_items(item)
 
       expect(@author.items.length).to eq 1
+    end
+
+    it 'should change to hash format' do
+      hash =  {
+        first_name: @first_name,
+        last_name: @last_name
+      }
+
+      expect(@author.to_hash).to eq hash
     end
   end
 end
