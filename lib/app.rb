@@ -17,6 +17,7 @@ class App
   end
 
   def exit_program
+    save_author
     puts 'Thanks! exiting....'
   end
 end
