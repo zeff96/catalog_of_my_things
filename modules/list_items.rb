@@ -4,7 +4,7 @@ module Listitems
     print "No author found\n" if @authors.empty?
 
     @authors.each_with_index do |author, idx|
-      puts "#{idx + 1}).#{author.first_name} #{author.last_name}"
+      puts "#{idx + 1}) #{author.first_name} #{author.last_name}"
     end
   end
 
@@ -13,7 +13,7 @@ module Listitems
     print "No game found\n" if @games.empty?
 
     @games.each_with_index do |game, idx|
-      puts "#{idx + 1}). Multiplayer: #{game.multiplayer} Last Played: #{game.last_played_at}"
+      puts "#{idx + 1}) Multiplayer: #{game.multiplayer} Last Played: #{game.last_played_at}"
     end
   end
 end

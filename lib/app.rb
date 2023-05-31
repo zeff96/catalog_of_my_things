@@ -1,7 +1,9 @@
 require_relative '../modules/add_author'
+require_relative '../modules/list_items'
 
 class App
-  include AuthorManager
+  include CreateAuthor
+  include Listitems
 
   def initialize
     @authors = []
