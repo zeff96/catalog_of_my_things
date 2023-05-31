@@ -14,3 +14,12 @@ class Menu
     puts "\nChoose an option by entering a number:"
     OPTIONS.each {|key, value| puts "#{key} - #{value[:label]}"}
   end
+
+  def handle_selection(selection)
+    handlers = OPTIONS[selection]
+    if handlers
+      @app.send(handlers[:action])
+    else
+      puts "Invalid option"
+    end
+  end
