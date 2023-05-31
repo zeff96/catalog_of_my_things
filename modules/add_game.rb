@@ -13,4 +13,17 @@ module CreateGame
     print message
     gets.chomp
   end
+
+  def prompt_eval(message)
+    print message
+    val = gets.chomp.downcase
+    case val
+    when y
+      'YES'
+    when n
+      'NO'
+    else
+      prompt_eval(message)
+    end
+  end
 end
