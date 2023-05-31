@@ -17,4 +17,11 @@ module AuthorManager
       puts "#{idx + 1}.#{author.first_name} #{author.last_name}"
     end
   end
+
+  private
+
+  def prompt_input(message)
+    print message
+    gets.chomp
+  end
 end
