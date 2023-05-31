@@ -6,4 +6,11 @@ module CreateGame
 
   game = Game.new(multiplayer, last_played_at)
   @game << game unless game.nil?
+
+  private
+
+  def prompt_input(message)
+    print message
+    gets.chomp
+  end
 end
