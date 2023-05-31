@@ -9,5 +9,10 @@ module CreateGenre
     genre
   end
 
+  private
 
+  def prompt_input(message)
+    print message
+    gets.chomp
+  end
 end
