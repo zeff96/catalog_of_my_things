@@ -1,12 +1,7 @@
 require_relative 'item'
-require_relative '../modules/modules'
-require_relative 'author'
-require_relative 'label'
 require 'date'
 
 class Game < Item
-  include Associations
-
   attr_reader :publish_date
   attr_accessor :multiplayer, :last_played_at
 
