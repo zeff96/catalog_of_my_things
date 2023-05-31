@@ -17,7 +17,7 @@ describe MusicAlbum do
     end
 
     it 'should move_to_archive to eq "true"' do
-      expect(@album.move_to_archive)
+      expect(@album.move_to_archive).to be_truthy
     end
 
     it 'should return true if publish date is older than 10yrs and on Spotify' do
