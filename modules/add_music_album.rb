@@ -5,7 +5,6 @@ module CreateMusicAlbum
   def add_music_album
     publish_date = prompt_input('When was the music album published (yyyy-mon-dd): ')
     on_spotify = prompt_eval('Is the music album on_spotify?')
-    
 
     puts "\nSelect a music album by number:"
     list_all_genres
@@ -13,10 +12,10 @@ module CreateMusicAlbum
     genre_index = gets.chomp.to_i
 
     genre = if genre_index == @genres.size + 1
-               add_genre
-             else
-               @genres[genre_index - 1]
-             end
+              add_genre
+            else
+              @genres[genre_index - 1]
+            end
 
     album = MusicAlbum.new(publish_date, on_spotify)
     album.genre = genre

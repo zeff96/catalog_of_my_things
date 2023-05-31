@@ -21,17 +21,17 @@ module Listitems
     puts 'List all albums'
     print "No album found\n" if @music_albums.empty?
 
-   @music_albums.each_with_index do |value, idx|
-    puts "#{idx + 1}) publish_date: #{value.publish_date} on_spotify: #{value.on_spotify}" 
-   end
-  end   
+    @music_albums.each_with_index do |value, idx|
+      puts "#{idx + 1}) publish_date: #{value.publish_date} on_spotify: #{value.on_spotify}"
+    end
+  end
 
   def list_all_genres
     puts 'List all genres'
     print "No genre found\n" if @genres.empty?
 
-   @genres.each_with_index do |genre, idx|
-    puts "#{idx + 1})  #{genre.name}" 
-   end
-  end 
+    @genres.each_with_index do |genre, idx|
+      puts "#{idx + 1})  #{genre.name}"
+    end
+  end
 end
