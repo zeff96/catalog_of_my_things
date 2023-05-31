@@ -25,12 +25,12 @@ describe Book do
 
   context 'should return correct value for can_be_archived?' do
     it 'should return false' do
-      expect(@book1.move_to_archive).to be(false)
+      expect(@book1.instance_eval('can_be_archived?', __FILE__, __LINE__)).to be(false)
     end
 
     it 'should return true' do
       book2 = Book.new('bad', 'Education Publisher', '1991-03-03')
-      expect(book2.move_to_archive).to be(true)
+      expect(book2.instance_eval('can_be_archived?', __FILE__, __LINE__)).to be(true)
     end
   end
 end
