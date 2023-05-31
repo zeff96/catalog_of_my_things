@@ -1,7 +1,7 @@
 OPTIONS = {
   1 => { label: 'List all authors', action: :list_all_authors },
   2 => { label: 'List of games', action: :list_all_games },
-  3 => { label: 'Add game', action: :add_game },
+  3 => { label: 'Add a game', action: :add_game },
   4 => { label: 'Exit', action: :exit_program }
 }.freeze
 
