@@ -1,8 +1,10 @@
 OPTIONS = {
   1 => { label: 'List all authors', action: :list_all_authors },
   2 => { label: 'List all games', action: :list_all_games },
-  3 => { label: 'Add game', action: :add_game },
-  4 => { label: 'Exit', action: :exit_program }
+  3 => { label: 'List all books', action: :list_books },
+  4 => { label: 'Add game', action: :add_game },
+  5 => { label: 'Add book', action: :add_book },
+  6 => { label: 'Exit', action: :exit_program }
 }.freeze
 
 class Menu
