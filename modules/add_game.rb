@@ -2,11 +2,12 @@ require_relative '../lib/game'
 
 module CreateGame
   def add_game
-    multiplayer = prompt_eval('[YES | NO]: ')
-    last_played_at = prompt_input('DATE[YYYY-Mon-DD]: ')
+    multiplayer = prompt_eval('Is the game a multiplayer?')
+    last_played_at = prompt_input('When was the game last played? (yyyy-mon-dd): ')
   
     game = Game.new(multiplayer, last_played_at)
-    @game << game unless game.nil?
+    @games << game unless game.nil?
+    puts 'Game created succesfully!'
   end
 
   private
@@ -17,15 +18,7 @@ module CreateGame
   end
 
   def prompt_eval(message)
-    print message
-    val = gets.chomp.downcase
-    case val
-    when y
-      'YES'
-    when n
-      'NO'
-    else
-      prompt_eval(message)
-    end
+    val = prompt_input("#{message} (Y/N): ").downcase
+    %w[y yes].include?(val)
   end
 end
