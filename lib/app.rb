@@ -16,7 +16,7 @@ class App
     @save_author_data = SaveData.new('data/author.json')
     @save_game_data = SaveData.new('data/game.json')
     @authors = load_author_data || []
-    @games = []
+    @games = load_game_data || []
   end
 
   def exit_program

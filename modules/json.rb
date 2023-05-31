@@ -15,6 +15,7 @@ class SaveData
 
     file_content = File.read(@file_name)
     return JSON.parse(file_content) unless file_content.empty?
+
     nil
   rescue JSON::ParserError
     puts "Error parsing #{@file_name}. Invalid json format!"
