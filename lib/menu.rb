@@ -9,3 +9,8 @@ class Menu
   def initialize(app)
     @app = app
   end
+
+  def display
+    puts "\nChoose an option by entering a number:"
+    OPTIONS.each {|key, value| puts "#{key} - #{value[:label]}"}
+  end
