@@ -2,7 +2,7 @@ require_relative '../modules/add_author'
 
 class App
   include AuthorManager
-  
+
   def initialize
     @authors = []
   end
