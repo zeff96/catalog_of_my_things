@@ -23,3 +23,13 @@ class Menu
       puts "Invalid option"
     end
   end
+
+  def menu_list
+    loop do
+      display
+      option = gets.chomp.to_i
+      handle_selection(option)
+      break if option == OPTIONS.size
+    end
+  end
+end
