@@ -31,5 +31,5 @@ describe Genre do
       genre.add_item(item)
       expect(item.genre).to eq(genre)
     end
-  
+  end
 end
