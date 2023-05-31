@@ -3,7 +3,7 @@ require_relative '../modules/modules'
 
 class Item
   include Associations
-  
+
   attr_reader :id
   attr_accessor :publish_date
 

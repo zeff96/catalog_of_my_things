@@ -11,12 +11,11 @@ module CreateGame
     puts "#{@authors.size + 1}) Add new Author"
     author_index = gets.chomp.to_i
 
-    if author_index == @authors.size + 1
-      author = add_author
-    else
-      author = @authors[author_index - 1]
-    end
-
+    author = if author_index == @authors.size + 1
+               add_author
+             else
+               @authors[author_index - 1]
+             end
 
     game = Game.new(multiplayer, last_played_at)
     game.author = author
