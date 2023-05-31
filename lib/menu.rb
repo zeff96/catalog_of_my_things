@@ -3,3 +3,9 @@ OPTIONS = {
   2 => {label: 'Add author', action: :add_author},
   3 => {label: 'Exit', action: :exit_program}
 }.freeze
+
+
+class Menu
+  def initialize(app)
+    @app = app
+  end
