@@ -11,13 +11,13 @@ class App
   include SaveItems
 
   def initialize
-    @save_author_data = SaveData.new('../data/author.json')
+    @save_author_data = SaveData.new('data/author.json')
     @authors = []
     @games = []
   end
 
   def exit_program
-    save_author
+    save_author_data
     puts 'Thanks! exiting....'
   end
 end
