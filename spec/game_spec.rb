@@ -3,7 +3,9 @@ require 'date'
 
 describe Game do
   before(:each) do
-    @game = Game.new('Yes', '2005-10-15')
+    @multiplayer = 'Yes'
+    @last_played_at = '2005-10-15'
+    @game = Game.new(@multiplayer, @last_played_at)
   end
 
   context 'Game class test' do
@@ -23,6 +25,15 @@ describe Game do
     it 'should have can_be_archived eq "false"' do
       @game.publish_date = '2010-10-15'
       expect(@game.instance_eval('can_be_archived?', __FILE__, __LINE__)).to be_truthy
+    end
+
+    it 'should change to hash format' do
+      hash =   {
+        multiplayer: @multiplayer,
+        last_played_at: @last_played_at
+      }
+
+      expect(@game.to_hash).to eq hash
     end
   end
 end
