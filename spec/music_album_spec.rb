@@ -33,7 +33,6 @@ describe MusicAlbum do
   context 'item class test' do
     it 'should return true if publish date is older than 10yrs' do
       expect(@album.send(:can_be_archived?)).to be_truthy
-
     end
   end
 end
