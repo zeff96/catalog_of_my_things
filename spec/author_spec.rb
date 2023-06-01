@@ -33,7 +33,7 @@ describe Author do
     end
 
     it 'change to hash format' do
-      hash =  {
+      hash = {
         first_name: @first_name,
         last_name: @last_name
       }

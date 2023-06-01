@@ -28,7 +28,7 @@ describe Game do
     end
 
     it 'change to hash format' do
-      hash =   {
+      hash = {
         multiplayer: @multiplayer,
         last_played_at: @last_played_at
       }
