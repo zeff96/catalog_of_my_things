@@ -19,6 +19,7 @@ describe Book do
     end
 
     it 'should return the color for the label' do
+
       expect(@book1.publish_date).to eql '2022-02-05'
     end
   end
