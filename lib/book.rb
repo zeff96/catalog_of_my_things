@@ -15,6 +15,14 @@ class Book < Item
     @publisher = publisher
   end
 
+  def to_hash
+    {
+      publisher: publisher,
+      publish_date: publish_date,
+      cover_state: cover_state
+    }
+  end
+
   private
 
   def can_be_archived?
