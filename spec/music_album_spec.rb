@@ -8,15 +8,15 @@ describe MusicAlbum do
   end
 
   context 'music album class test' do
-    it 'should be an instance of MusicAlbum' do
+    it 'be an instance of MusicAlbum' do
       expect(@album).to be_an_instance_of MusicAlbum
     end
 
-    it 'should inherit from Item class' do
+    it 'inherit from Item class' do
       expect(@album).to be_a(Item)
     end
 
-    it 'should move_to_archive to eq "true"' do
+    it 'move_to_archive to eq "true"' do
       expect(@album.move_to_archive).to be_truthy
     end
 
@@ -33,6 +33,7 @@ describe MusicAlbum do
   context 'item class test' do
     it 'should return true if publish date is older than 10yrs' do
       expect(@album.send(:can_be_archived?)).to be_truthy
+
     end
   end
 end
