@@ -8,30 +8,30 @@ describe MusicAlbum do
   end
 
   context 'music album class test' do
-    it 'should be an instance of MusicAlbum' do
+    it 'be an instance of MusicAlbum' do
       expect(@album).to be_an_instance_of MusicAlbum
     end
 
-    it 'should inherit from Item class' do
+    it 'inherit from Item class' do
       expect(@album).to be_a(Item)
     end
 
-    it 'should move_to_archive to eq "true"' do
+    it 'move_to_archive to eq "true"' do
       expect(@album.move_to_archive).to be_truthy
     end
 
-    it 'should return true if publish date is older than 10yrs and on Spotify' do
+    it 'return true if publish date is older than 10yrs and on Spotify' do
       expect(@album.instance_eval('can_be_archived?', __FILE__, __LINE__)).to be_truthy
     end
 
-    it 'should return false if publish date is older than 10yrs but not on Spotify' do
+    it 'return false if publish date is older than 10yrs but not on Spotify' do
       album = MusicAlbum.new('2010-01-01', on_spotify: false)
       expect(album.instance_eval('can_be_archived?', __FILE__, __LINE__)).to be_falsy
     end
   end
 
   context 'item class test' do
-    it 'should return true if publish date is older than 10yrs' do
+    it 'return true if publish date is older than 10yrs' do
       expect(@album.instance_eval('can_be_archived?', __FILE__, __LINE__)).to be_truthy
     end
   end
