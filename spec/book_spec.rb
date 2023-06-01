@@ -21,16 +21,24 @@ describe Book do
     it 'should return the color for the label' do
       expect(@book1.publish_date).to eql '2022-02-05'
     end
-  end
 
-  context 'should return correct value for can_be_archived?' do
-    it 'should return false' do
-      expect(@book1.instance_eval('can_be_archived?', __FILE__, __LINE__)).to be(false)
+    it 'should return the correct hash' do
+      expect(@book1.to_hash).to eq({
+                                     publisher: 'Glorious Printers',
+                                     publish_date: '2022-02-05',
+                                     cover_state: 'good'
+                                   })
     end
 
-    it 'should return true' do
-      book2 = Book.new(publisher: 'Education Publisher', publish_date: '1991-03-03', cover_state: 'bad')
-      expect(book2.instance_eval('can_be_archived?', __FILE__, __LINE__)).to be(true)
+    context 'should return correct value for can_be_archived?' do
+      it 'should return false' do
+        expect(@book1.instance_eval('can_be_archived?', __FILE__, __LINE__)).to be(false)
+      end
+
+      it 'should return true' do
+        book2 = Book.new(publisher: 'Education Publisher', publish_date: '1991-03-03', cover_state: 'bad')
+        expect(book2.instance_eval('can_be_archived?', __FILE__, __LINE__)).to be(true)
+      end
     end
   end
 end
