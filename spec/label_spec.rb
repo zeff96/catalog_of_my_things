@@ -22,12 +22,12 @@ describe Label do
 
   context 'return number of items added to label' do
     it 'return the count of 1' do
-      book1 = Book.new('good', 'Glorious Printers', '2023-26-05')
+      book1 = Book.new(publisher: 'Glorious Printers', publish_date: '2023-26-05', cover_state: 'good')
       @label.add_items(book1)
       expect(@label.items.count).to eq 1
     end
     it 'return the count of 2' do
-      book2 = Book.new('bad', 'Education Publisher', '1991-03-03')
+      book2 = Book.new(publisher: 'Education Publisher', publish_date: '1991-03-03', cover_state: 'bad')
       @label.add_items(book2)
       expect(@label.items.count).to eq 2
     end
