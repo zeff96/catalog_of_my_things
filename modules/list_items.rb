@@ -17,12 +17,12 @@ module Listitems
     end
   end
 
-
   def list_all_labels
     puts "\nList all Labels"
     puts 'No labels have been added.' if @labels.empty?
 
     @labels.each_with_index { |label, index| puts "#{index + 1}) [Label] Title: #{label.title}, Color: #{label.color}" }
+  end
 
   def list_all_albums
     puts 'List all albums'
