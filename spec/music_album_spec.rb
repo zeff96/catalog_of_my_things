@@ -2,8 +2,7 @@ require_relative '../lib/music_album'
 require 'date'
 require_relative '../lib/item'
 
-
-  describe MusicAlbum do
+describe MusicAlbum do
   let(:publish_date) { '2022-01-01' }
   let(:on_spotify) { true }
   let(:music_album) { MusicAlbum.new(publish_date, on_spotify) }
