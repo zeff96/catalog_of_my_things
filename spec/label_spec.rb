@@ -18,18 +18,25 @@ describe Label do
     it 'return the color for the label' do
       expect(@label.color).to eql 'grey'
     end
-  end
 
-  context 'return number of items added to label' do
-    it 'return the count of 1' do
-      book1 = Book.new(publisher: 'Glorious Printers', publish_date: '2023-26-05', cover_state: 'good')
-      @label.add_items(book1)
-      expect(@label.items.count).to eq 1
+    context 'return number of items added to label' do
+      it 'return the count of 1' do
+        book1 = Book.new(publisher: 'Glorious Printers', publish_date: '2023-26-05', cover_state: 'good')
+        @label.add_items(book1)
+        expect(@label.items.count).to eq 1
+      end
+      it 'return the count of 2' do
+        book2 = Book.new(publisher: 'Education Publisher', publish_date: '1991-03-03', cover_state: 'bad')
+        @label.add_items(book2)
+        expect(@label.items.count).to eq 2
+      end
     end
-    it 'return the count of 2' do
-      book2 = Book.new(publisher: 'Education Publisher', publish_date: '1991-03-03', cover_state: 'bad')
-      @label.add_items(book2)
-      expect(@label.items.count).to eq 2
+
+    it 'should return the correct hash' do
+      expect(@label.to_hash).to eq({
+                                     title: 'Rock Nation',
+                                     color: 'grey'
+                                   })
     end
   end
 end
