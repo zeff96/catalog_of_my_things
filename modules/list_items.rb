@@ -13,8 +13,15 @@ module Listitems
     print "No game found\n" if @games.empty?
 
     @games.each_with_index do |game, idx|
-      puts "#{idx + 1}) Multiplayer: #{game.multiplayer} Last Played: #{game.last_played_at}"
+      puts "#{idx + 1}) Multiplayer: #{game.multiplayer} Last Played: #{game.last_played_at}\n"
     end
+  end
+
+  def list_all_labels
+    puts "\nList all Labels"
+    puts 'No labels have been added.' if @labels.empty?
+
+    @labels.each_with_index { |label, index| puts "#{index + 1}) [Label] Title: #{label.title}, Color: #{label.color}" }
   end
 
   def list_all_albums
