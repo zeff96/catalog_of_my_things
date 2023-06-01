@@ -29,4 +29,20 @@ module LoadData
 
     music_album_data.map { |data| MusicAlbum.new(data['publish_date'], data['on_spotify']) }
   end
+
+  def load_label_data
+    label_data = @save_label_data.load_data
+    return nil if label_data.nil?
+
+    label_data.map { |data| Label.new(data['title'], data['color']) }
+  end
+
+  def load_book_data
+    book_data = @save_book_data.load_data
+    return nil if book_data.nil?
+
+    book_data.map do |data|
+      Book.new(publisher: data['publisher'], publish_date: data['publish_date'], cover_state: data['cover_state'])
+    end
+  end
 end

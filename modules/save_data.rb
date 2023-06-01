@@ -14,4 +14,12 @@ module SaveItems
   def save_music_album_data
     @save_music_album_data.save_data(@music_albums.map(&:to_hash))
   end
+
+  def save_label_data
+    @save_label_data.save_data(@labels.map(&:to_hash))
+  end
+
+  def save_book_data
+    @save_book_data.save_data(@books.map(&:to_hash))
+  end
 end
