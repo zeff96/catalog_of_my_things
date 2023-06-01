@@ -2,7 +2,7 @@ require_relative '../modules/modules'
 require_relative '../lib/item'
 require_relative '../lib/genre'
 
-describe Genre do
+RSpec.describe Genre do
   let(:genre_name) { 'Science Fiction' }
   let(:item_publish_date) { '2023-01-01' }
   let(:item) { Item.new(item_publish_date) }
@@ -22,14 +22,14 @@ describe Genre do
     end
   end
 
-  describe '#add_item' do
+  describe '#add_items' do
     it 'adds an item to the genre' do
-      genre.add_item(item)
+      genre.add_items(item)
       expect(genre.items).to include(item)
     end
 
     it 'sets the genre of the added item' do
-      genre.add_item(item)
+      genre.add_items(item)
       expect(item.genre).to eq(genre)
     end
   end

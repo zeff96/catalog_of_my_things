@@ -1,8 +1,11 @@
 OPTIONS = {
   1 => { label: 'List all authors', action: :list_all_authors },
   2 => { label: 'List of games', action: :list_all_games },
-  3 => { label: 'Add a game', action: :add_game },
-  4 => { label: 'Exit', action: :exit_program }
+  3 => { label: 'List all genres', action: :list_all_genres },
+  4 => { label: 'List all music albums', action: :list_all_albums },
+  5 => { label: 'Add a game', action: :add_game },
+  6 => { label: 'Add a music album', action: :add_music_album },
+  7 => { label: 'Exit', action: :exit_program }
 }.freeze
 
 class Menu
