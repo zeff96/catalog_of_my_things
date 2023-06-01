@@ -19,8 +19,11 @@ class App
   def initialize
     @save_author_data = SaveData.new('data/author.json')
     @save_game_data = SaveData.new('data/game.json')
+    @save_genre_data = SaveData.new('data/genre.json')
+    @save_music_album_data = SaveData.new('data/music_album.json')
     @authors = load_author_data || []
     @games = load_game_data || []
+    @genres = load_genre_data || []
     @music_albums = []
     @genres = []
   end
@@ -28,6 +31,8 @@ class App
   def exit_program
     save_author_data
     save_game_data
+    save_genre_data
+    save_music_album_data
     puts 'Thanks! exiting....'
   end
 end
