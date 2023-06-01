@@ -6,6 +6,8 @@ require_relative '../modules/books_app'
 require_relative '../modules/json'
 require_relative '../modules/save_data'
 require_relative '../modules/fetch_data'
+require_relative '../modules/add_music_album'
+require_relative '../modules/add_genre'
 
 class App
   include CreateAuthor
@@ -15,6 +17,8 @@ class App
   include LoadData
   include BookInputHandler
   include CreateLabel
+  include CreateMusicAlbum
+  include CreateGenre
 
   def initialize
     @save_author_data = SaveData.new('data/author.json')
@@ -23,6 +27,8 @@ class App
     @games = load_game_data || []
     @books = []
     @labels = []
+    @music_albums = []
+    @genres = []
   end
 
   def exit_program

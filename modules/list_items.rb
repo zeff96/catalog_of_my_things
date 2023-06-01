@@ -17,10 +17,28 @@ module Listitems
     end
   end
 
+
   def list_all_labels
     puts "\nList all Labels"
     puts 'No labels have been added.' if @labels.empty?
 
     @labels.each_with_index { |label, index| puts "#{index + 1}) [Label] Title: #{label.title}, Color: #{label.color}" }
+
+  def list_all_albums
+    puts 'List all albums'
+    print "No album found\n" if @music_albums.empty?
+
+    @music_albums.each_with_index do |value, idx|
+      puts "#{idx + 1}) publish_date: #{value.publish_date} on_spotify: #{value.on_spotify}"
+    end
+  end
+
+  def list_all_genres
+    puts 'List all genres'
+    print "No genre found\n" if @genres.empty?
+
+    @genres.each_with_index do |genre, idx|
+      puts "#{idx + 1})  #{genre.name}"
+    end
   end
 end

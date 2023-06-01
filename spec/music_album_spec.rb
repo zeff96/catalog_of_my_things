@@ -4,7 +4,7 @@ require_relative '../lib/item'
 
 describe MusicAlbum do
   before(:each) do
-    @album = MusicAlbum.new('2010-01-01', on_spotify: true)
+    @album = MusicAlbum.new('2010-01-01', true)
   end
 
   context 'music album class test' do
@@ -20,19 +20,19 @@ describe MusicAlbum do
       expect(@album.move_to_archive).to be_truthy
     end
 
-    it 'return true if publish date is older than 10yrs and on Spotify' do
-      expect(@album.instance_eval('can_be_archived?', __FILE__, __LINE__)).to be_truthy
+    it 'should return true if publish date is older than 10yrs and on Spotify' do
+      expect(@album.send(:can_be_archived?)).to be_truthy
     end
 
-    it 'return false if publish date is older than 10yrs but not on Spotify' do
-      album = MusicAlbum.new('2010-01-01', on_spotify: false)
-      expect(album.instance_eval('can_be_archived?', __FILE__, __LINE__)).to be_falsy
+    it 'should return false if publish date is older than 10yrs but not on Spotify' do
+      album = MusicAlbum.new('2010-01-01', false)
+      expect(album.send(:can_be_archived?)).to be_falsy
     end
   end
 
   context 'item class test' do
-    it 'return true if publish date is older than 10yrs' do
-      expect(@album.instance_eval('can_be_archived?', __FILE__, __LINE__)).to be_truthy
+    it 'should return true if publish date is older than 10yrs' do
+      expect(@album.send(:can_be_archived?)).to be_truthy
     end
   end
 end
