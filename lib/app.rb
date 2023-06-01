@@ -7,7 +7,6 @@ require_relative '../modules/json'
 require_relative '../modules/save_data'
 require_relative '../modules/fetch_data'
 
-
 class App
   include CreateAuthor
   include Listitems
@@ -24,7 +23,6 @@ class App
     @games = load_game_data || []
     @books = []
     @labels = []
-
   end
 
   def exit_program
