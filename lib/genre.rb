@@ -14,7 +14,7 @@ class Genre
 
   def to_hash
     {
-    name: name
+      name: name
     }
-  end  
+  end
 end
