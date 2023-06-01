@@ -21,6 +21,6 @@ module Listitems
     puts "\nList all Labels"
     puts 'No labels have been added.' if @labels.empty?
 
-    @labels.each { |label, index| puts "[Label] #{index + 1}) Title: #{label.title}, Color: #{label.color}" }
+    @labels.each_with_index { |label, index| puts "#{index + 1}) [Label] Title: #{label.title}, Color: #{label.color}" }
   end
 end

@@ -11,14 +11,15 @@ module BookInputHandler
   def list_books
     puts "\nList all books"
     puts 'No books have been added.' if @books.empty?
-    @books.each do |book|
-      print '[Book] '
+    @books.each_with_index do |book, index|
+      print "#{index + 1}) [Book] "
       print "Title: #{book.label.title}, " if defined?(book.label.title)
       print "Author: #{book.author.first_name} #{book.author.last_name}, " if defined?(book.author.first_name)
       print "Publisher: #{book.publisher}, "
       print "Publish Date: #{book.publish_date}, "
       print "Cover State: #{book.cover_state}"
       print ", Color: #{book.label.color}" if defined?(book.label.color)
+      puts
     end
   end
 
@@ -56,7 +57,7 @@ module BookInputHandler
     case choice
     when '1'
       action1.call
-      return options(book, 'author', list, action1, action2) if list.empty?
+      return options(book, class_name, list, action1, action2) if list.empty?
 
       puts "Select #{class_name} by index[int]: "
       action1.call
