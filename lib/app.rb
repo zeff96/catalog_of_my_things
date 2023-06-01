@@ -24,6 +24,7 @@ class App
     @authors = load_author_data || []
     @games = load_game_data || []
     @genres = load_genre_data || []
+    @music_albums = load_genre_data || []
     @music_albums = []
     @genres = []
   end
