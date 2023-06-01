@@ -3,7 +3,7 @@ require_relative '../lib/label'
 module CreateLabel
   def add_label
     puts "\nAdd label"
-    print "Enter title: "
+    print 'Enter title: '
     title = gets.chomp.to_s
 
     print 'Enter color: '
