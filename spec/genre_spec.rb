@@ -3,7 +3,7 @@ require_relative '../lib/item'
 require_relative '../lib/genre'
 require 'date'
 
-RSpec.describe Genre do
+describe Genre do
   let(:genre_name) { 'Action' }
   let(:genre) { Genre.new(genre_name) }
 
