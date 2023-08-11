@@ -1,8 +1,6 @@
 <a name="readme-top"></a>
-
-<div align="center">
-<h3><b>Catalog_of_my_things</b></h3>
-</div>
+![UML Class Diagram](https://github.com/microverseinc/curriculum-ruby/blob/main/group-capstone/images/catalog_of_my_things.png)
+<div align="center"><h1><b>Catalog of My Things</b></h1></div>
 
 # 📗 Table of Contents
 
